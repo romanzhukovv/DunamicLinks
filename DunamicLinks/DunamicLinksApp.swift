@@ -10,11 +10,11 @@ import Firebase
 
 @main
 struct DunamicLinksApp: App {
-    @State var deepLink: DeepLinkHandler.DeepLink?
+    @State private var deepLink: DeepLinkHandler.DeepLink?
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(deepLink: $deepLink)
                 .onOpenURL { url in
                     print(url)
                     
@@ -34,7 +34,6 @@ struct DunamicLinksApp: App {
                         print("No Link")
                     }
                 }
-                .environment(\.deepLink, deepLink)
         }
     }
     
@@ -60,9 +59,5 @@ struct DunamicLinksApp: App {
         }
         self.deepLink = deepLink
         print("Deep link: \(deepLink)")
-
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//          self.deepLink = nil
-//        }
     }
 }

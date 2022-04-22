@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.deepLink) var deepLink
+    @Binding var deepLink: DeepLinkHandler.DeepLink?
     @State private var tag: String? = ""
-    @State private var audioBoxID: String? = ""
+
     var body: some View {
         NavigationView {
             VStack {
@@ -18,20 +18,20 @@ struct ContentView: View {
                     .padding(.top, 100)
                 Spacer()
                 NavigationLink("Открыть аудиотеку", tag: "receivedLink", selection: $tag) {
-                    AudioBoxesList(audioBoxID: audioBoxID)
+                    AudioBoxesList(deepLink: $deepLink)
                 }
             }
             .navigationTitle("Shagame")
         }
         .navigationViewStyle(.stack)
-        .onChange(of: deepLink) { _ in
+        .onChange(of: deepLink) { deepLink in
             tag = "receivedLink"
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

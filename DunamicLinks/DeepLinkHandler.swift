@@ -8,6 +8,7 @@
 import Foundation
 
 class DeepLinkHandler {
+    
     enum DeepLink: Equatable {
         case home
         case details(audioBoxID: String)

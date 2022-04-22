@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct DeepLinkKey: EnvironmentKey {
-  static var defaultValue: DeepLinkHandler.DeepLink? {
-    return nil
-  }
-}
-
-extension EnvironmentValues {
-  var deepLink: DeepLinkHandler.DeepLink? {
-    get {
-        self[DeepLinkKey.self]
-    }
-    set {
-        self[DeepLinkKey.self] = newValue
-    }
-  }
-}
+//struct DeepLinkKey: EnvironmentKey {
+//  static var defaultValue: DeepLinkHandler.DeepLink? {
+//    return nil
+//  }
+//}
+//
+//extension EnvironmentValues {
+//  var deepLink: DeepLinkHandler.DeepLink? {
+//    get {
+//        self[DeepLinkKey.self]
+//    }
+//    set {
+//        self[DeepLinkKey.self] = newValue
+//    }
+//  }
+//}

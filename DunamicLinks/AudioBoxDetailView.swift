@@ -10,8 +10,7 @@ import Firebase
 
 struct AudioBoxDetailView: View {
     let audioBox: AudioBox
-
-    
+    @Binding var selectedBox: Int?
     var body: some View {
         VStack {
             Text(audioBox.name)
@@ -21,6 +20,10 @@ struct AudioBoxDetailView: View {
             .padding(.top, 50)
         }
         .navigationTitle(audioBox.name)
+        .onAppear {
+            print(selectedBox)
+            selectedBox = nil
+        }
     }
     
     func createDynamicLink() {
@@ -77,8 +80,8 @@ struct AudioBoxDetailView: View {
     }
 }
 
-struct AudioBoxDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        AudioBoxDetailView(audioBox: AudioBox(id: "01", name: "My box"))
-    }
-}
+//struct AudioBoxDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AudioBoxDetailView(audioBox: AudioBox(id: "01", name: "My box"))
+//    }
+//}
