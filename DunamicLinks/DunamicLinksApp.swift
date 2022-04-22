@@ -10,13 +10,59 @@ import Firebase
 
 @main
 struct DunamicLinksApp: App {
+    @State var deepLink: DeepLinkHandler.DeepLink?
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { url in
+                    print(url)
+                    
+                    let linkHandled = DynamicLinks.dynamicLinks().handleUniversalLink(url) { dynamicLink, error in
+                        guard error == nil else {
+                            fatalError("Error handling the incoming dynamic link")
+                        }
+                        
+                        if let dynamicLink = dynamicLink {
+                            self.handleDynamicLink(dynamicLink: dynamicLink)
+                        }
+                    }
+                    
+                    if linkHandled {
+                        print("Link Handled")
+                    } else {
+                        print("No Link")
+                    }
+                }
+                .environment(\.deepLink, deepLink)
         }
     }
     
     init() {
         FirebaseApp.configure()
+    }
+    
+    private func handleDynamicLink(dynamicLink: DynamicLink) {
+        guard let url = dynamicLink.url else { return }
+
+        print("Your incoming link parameter is \(url.absoluteString)")
+
+        guard
+          dynamicLink.matchType == .unique ||
+          dynamicLink.matchType == .default
+        else {
+          return
+        }
+
+        let deepLinkHandler = DeepLinkHandler()
+        guard let deepLink = deepLinkHandler.parseComponents(from: url) else {
+          return
+        }
+        self.deepLink = deepLink
+        print("Deep link: \(deepLink)")
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//          self.deepLink = nil
+//        }
     }
 }
