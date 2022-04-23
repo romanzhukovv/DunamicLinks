@@ -10,8 +10,8 @@ import Firebase
 
 @main
 struct DunamicLinksApp: App {
-//    @State private var deepLink: DeepLinkHandler.DeepLink?
     @State private var deepLinker = DeepLinkManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

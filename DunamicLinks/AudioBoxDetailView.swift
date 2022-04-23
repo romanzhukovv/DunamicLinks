@@ -21,8 +21,10 @@ struct AudioBoxDetailView: View {
         }
         .navigationTitle(audioBox.name)
         .onAppear {
-            deepLinker.currentDetail = nil
-            deepLinker.deepLink = nil
+            if let _ = deepLinker.deepLink {
+                deepLinker.currentDetail = nil
+                deepLinker.deepLink = nil
+            }
         }
     }
     
