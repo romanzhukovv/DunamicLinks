@@ -13,8 +13,7 @@
 		FC54979C2812CD4A00729DA4 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = FC54979B2812CD4A00729DA4 /* FirebaseDynamicLinks */; };
 		FC54979F2812DBF500729DA4 /* AudioBoxesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54979E2812DBF500729DA4 /* AudioBoxesList.swift */; };
 		FC5497A12812DFB500729DA4 /* AudioBoxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A02812DFB500729DA4 /* AudioBoxDetailView.swift */; };
-		FC5497A32813016F00729DA4 /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A22813016F00729DA4 /* DeepLinkHandler.swift */; };
-		FC5497A528131DFE00729DA4 /* DeepLinkKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A428131DFE00729DA4 /* DeepLinkKey.swift */; };
+		FC5497A32813016F00729DA4 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A22813016F00729DA4 /* DeepLinkManager.swift */; };
 		FCAB1DCA2811C4E9008DB87D /* DunamicLinksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1DC92811C4E9008DB87D /* DunamicLinksApp.swift */; };
 		FCAB1DCC2811C4E9008DB87D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1DCB2811C4E9008DB87D /* ContentView.swift */; };
 		FCAB1DCE2811C4EA008DB87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCAB1DCD2811C4EA008DB87D /* Assets.xcassets */; };
@@ -26,8 +25,7 @@
 		FC54979D2812D4DC00729DA4 /* DunamicLinks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DunamicLinks.entitlements; sourceTree = "<group>"; };
 		FC54979E2812DBF500729DA4 /* AudioBoxesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBoxesList.swift; sourceTree = "<group>"; };
 		FC5497A02812DFB500729DA4 /* AudioBoxDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBoxDetailView.swift; sourceTree = "<group>"; };
-		FC5497A22813016F00729DA4 /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
-		FC5497A428131DFE00729DA4 /* DeepLinkKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkKey.swift; sourceTree = "<group>"; };
+		FC5497A22813016F00729DA4 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
 		FCAB1DC62811C4E9008DB87D /* DunamicLinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DunamicLinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAB1DC92811C4E9008DB87D /* DunamicLinksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunamicLinksApp.swift; sourceTree = "<group>"; };
 		FCAB1DCB2811C4E9008DB87D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,9 +71,8 @@
 				FCAB1DC92811C4E9008DB87D /* DunamicLinksApp.swift */,
 				FCAB1DCB2811C4E9008DB87D /* ContentView.swift */,
 				FC54979E2812DBF500729DA4 /* AudioBoxesList.swift */,
-				FC5497A22813016F00729DA4 /* DeepLinkHandler.swift */,
+				FC5497A22813016F00729DA4 /* DeepLinkManager.swift */,
 				FC5497A02812DFB500729DA4 /* AudioBoxDetailView.swift */,
-				FC5497A428131DFE00729DA4 /* DeepLinkKey.swift */,
 				FCAB1DCD2811C4EA008DB87D /* Assets.xcassets */,
 				FCAB1DCF2811C4EA008DB87D /* Preview Content */,
 			);
@@ -172,9 +169,8 @@
 				FC5497A12812DFB500729DA4 /* AudioBoxDetailView.swift in Sources */,
 				FC54979F2812DBF500729DA4 /* AudioBoxesList.swift in Sources */,
 				FCAB1DCC2811C4E9008DB87D /* ContentView.swift in Sources */,
-				FC5497A32813016F00729DA4 /* DeepLinkHandler.swift in Sources */,
+				FC5497A32813016F00729DA4 /* DeepLinkManager.swift in Sources */,
 				FCAB1DCA2811C4E9008DB87D /* DunamicLinksApp.swift in Sources */,
-				FC5497A528131DFE00729DA4 /* DeepLinkKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

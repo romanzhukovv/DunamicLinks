@@ -10,7 +10,7 @@ import Firebase
 
 struct AudioBoxDetailView: View {
     let audioBox: AudioBox
-    @Binding var selectedBox: Int?
+    @EnvironmentObject var deepLinker: DeepLinkManager
     var body: some View {
         VStack {
             Text(audioBox.name)
@@ -21,8 +21,8 @@ struct AudioBoxDetailView: View {
         }
         .navigationTitle(audioBox.name)
         .onAppear {
-            print(selectedBox)
-            selectedBox = nil
+            deepLinker.currentDetail = nil
+            deepLinker.deepLink = nil
         }
     }
     

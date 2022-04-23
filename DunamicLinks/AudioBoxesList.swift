@@ -8,31 +8,27 @@
 import SwiftUI
 
 struct AudioBoxesList: View {
-    @Binding var deepLink: DeepLinkHandler.DeepLink?
+    @EnvironmentObject var deepLinker: DeepLinkManager
     @State private var selectedBox: Int?
     private let audioBoxes = [AudioBox(id: "01", name: "First box"),
                               AudioBox(id: "02", name: "Second box"),
                               AudioBox(id: "03", name: "Third box")]
     
     var body: some View {
-        List(audioBoxes.indices) { index in
-            NavigationLink(audioBoxes[index].name, tag: index, selection: $selectedBox) {
-                AudioBoxDetailView(audioBox: audioBoxes[index], selectedBox: $selectedBox)
+        List(audioBoxes) { audioBox in
+            NavigationLink(audioBox.name, tag: audioBox.id, selection: $deepLinker.currentDetail) {
+                AudioBoxDetailView(audioBox: audioBox)
             }
         }
         .navigationTitle("AudioBoxes")
         .onAppear {
-            guard let deepLink = deepLink else { return }
-            
-            switch deepLink {  
-            case .home:
-                break
-            case .details(let audioBoxID):
-                if let index = audioBoxes.firstIndex(where: { $0.id == audioBoxID }) {
-                    self.deepLink = nil
-                    selectedBox = index
-                }
+            print(deepLinker.currentDetail ?? "")
+            guard let deepLink = deepLinker.deepLink else { return }
+            if let index = audioBoxes.firstIndex(where: { $0.id == deepLink }) {
+                deepLinker.currentDetail = audioBoxes[index].id
             }
+//            deepLinker.deepLink = nil
+            
         }
     }
 }

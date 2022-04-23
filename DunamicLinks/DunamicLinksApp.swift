@@ -10,11 +10,12 @@ import Firebase
 
 @main
 struct DunamicLinksApp: App {
-    @State private var deepLink: DeepLinkHandler.DeepLink?
-    
+//    @State private var deepLink: DeepLinkHandler.DeepLink?
+    @State private var deepLinker = DeepLinkManager()
     var body: some Scene {
         WindowGroup {
-            ContentView(deepLink: $deepLink)
+            ContentView()
+                .environmentObject(deepLinker)
                 .onOpenURL { url in
                     print(url)
                     
@@ -53,11 +54,12 @@ struct DunamicLinksApp: App {
           return
         }
 
-        let deepLinkHandler = DeepLinkHandler()
+        let deepLinkHandler = DeepLinkManager()
         guard let deepLink = deepLinkHandler.parseComponents(from: url) else {
           return
         }
-        self.deepLink = deepLink
+        deepLinker.currentView = .audioList
+        deepLinker.deepLink = deepLink
         print("Deep link: \(deepLink)")
     }
 }
