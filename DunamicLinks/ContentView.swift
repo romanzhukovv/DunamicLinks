@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var deepLinker: DeepLinkManagerb
+    @EnvironmentObject var deepLinker: DeepLinkManager
 
     var body: some View {
         NavigationView {
