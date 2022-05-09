@@ -14,6 +14,9 @@
 		FC54979F2812DBF500729DA4 /* AudioBoxesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54979E2812DBF500729DA4 /* AudioBoxesList.swift */; };
 		FC5497A12812DFB500729DA4 /* AudioBoxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A02812DFB500729DA4 /* AudioBoxDetailView.swift */; };
 		FC5497A32813016F00729DA4 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5497A22813016F00729DA4 /* DeepLinkManager.swift */; };
+		FC882366281C22EC007D9DA3 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FC882365281C22EC007D9DA3 /* FirebaseFirestoreCombine-Community */; };
+		FC882368281C22EC007D9DA3 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FC882367281C22EC007D9DA3 /* FirebaseFirestoreSwift-Beta */; };
+		FC89D14F281831C80085AA2D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC89D14E281831C80085AA2D /* FirebaseFirestore */; };
 		FCAB1DCA2811C4E9008DB87D /* DunamicLinksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1DC92811C4E9008DB87D /* DunamicLinksApp.swift */; };
 		FCAB1DCC2811C4E9008DB87D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1DCB2811C4E9008DB87D /* ContentView.swift */; };
 		FCAB1DCE2811C4EA008DB87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCAB1DCD2811C4EA008DB87D /* Assets.xcassets */; };
@@ -39,7 +42,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5497982812CD4A00729DA4 /* FirebaseAnalytics in Frameworks */,
+				FC89D14F281831C80085AA2D /* FirebaseFirestore in Frameworks */,
 				FC54979A2812CD4A00729DA4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				FC882368281C22EC007D9DA3 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				FC882366281C22EC007D9DA3 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				FC54979C2812CD4A00729DA4 /* FirebaseDynamicLinks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,11 +53,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC89D14D281831C80085AA2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FCAB1DBD2811C4E9008DB87D = {
 			isa = PBXGroup;
 			children = (
 				FCAB1DC82811C4E9008DB87D /* DunamicLinks */,
 				FCAB1DC72811C4E9008DB87D /* Products */,
+				FC89D14D281831C80085AA2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +121,9 @@
 				FC5497972812CD4A00729DA4 /* FirebaseAnalytics */,
 				FC5497992812CD4A00729DA4 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				FC54979B2812CD4A00729DA4 /* FirebaseDynamicLinks */,
+				FC89D14E281831C80085AA2D /* FirebaseFirestore */,
+				FC882365281C22EC007D9DA3 /* FirebaseFirestoreCombine-Community */,
+				FC882367281C22EC007D9DA3 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = DunamicLinks;
 			productReference = FCAB1DC62811C4E9008DB87D /* DunamicLinks.app */;
@@ -402,6 +419,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC5497962812CD4A00729DA4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDynamicLinks;
+		};
+		FC882365281C22EC007D9DA3 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5497962812CD4A00729DA4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		FC882367281C22EC007D9DA3 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5497962812CD4A00729DA4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		FC89D14E281831C80085AA2D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5497962812CD4A00729DA4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
