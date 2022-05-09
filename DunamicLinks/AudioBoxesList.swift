@@ -18,23 +18,23 @@ struct AudioBoxesList: View {
     
     private var audioBoxes: [AudioBox] = []
     
-    init() {
-        let db = Firestore.firestore()
-        let id =
-        db.collection("audioBoxes").document().getDocuments { querySnapshot, error in
-            if let error = error {
-                print(error)
-            } else {
-                for document in querySnapshot!.documents {
-//                self.audioBoxes = querySnapshot?.documents.compactMap({ $0.data(as: AudioBox.self)
-//                }) as! [AudioBox]
-                   let audioBox = try? document.data(as: AudioBox.self)
-//                    self.audioBoxes.append(audioBox ?? AudioBox(id: "", name: ""))
-//                    }
-                }
-            }
-        }
-    }
+//    init() {
+//        let db = Firestore.firestore()
+//        let id =
+//        db.collection("audioBoxes").document().getDocuments { querySnapshot, error in
+//            if let error = error {
+//                print(error)
+//            } else {
+//                for document in querySnapshot!.documents {
+////                self.audioBoxes = querySnapshot?.documents.compactMap({ $0.data(as: AudioBox.self)
+////                }) as! [AudioBox]
+//                   let audioBox = try? document.data(as: AudioBox.self)
+////                    self.audioBoxes.append(audioBox ?? AudioBox(id: "", name: ""))
+////                    }
+//                }
+//            }
+//        }
+//    }
     
     var body: some View {
         List(audioBoxes) { audioBox in
